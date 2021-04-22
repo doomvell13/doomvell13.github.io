@@ -45,14 +45,19 @@ main {
   margin-top: 10px;
 }
 
-.dice-container {
+.diceContainer {
   display: flex;
   flex-direction: row;
+  padding-top: 35%;
 }
 
 .dice {
   height: 10rem;
   box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+}
+
+.hide {
+  display: none;
 }
 
 .currentDiv {
@@ -64,11 +69,30 @@ main {
 }
 .current {
   text-transform: uppercase;
-  margin-bottom: 1rem;
-  font-size: 1.7rem;
+  margin-bottom: 20px;
+  font-size: 30px;
   color: #ddd;
 }
 
 .current-score {
   font-size: 3.5rem;
+}
+
+.button {
+  position: absolute;
+  left: 50%;
+  color: #444;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  font-weight: 400;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.rollDice {
+  top: 50rem;
+}
+.holdScore {
+  top: 55rem;
 }
