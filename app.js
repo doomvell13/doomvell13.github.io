@@ -1,6 +1,8 @@
 // Selectors
 const score1 = document.querySelector("#score1");
 const score2 = document.querySelector("#score2");
+const currentScoreP1 = document.getElementById("currentScore-0");
+const currentScoreP2 = document.getElementById("currentScore-1");
 const diceContainer = document.querySelector(".diceContainer");
 const dice1 = document.querySelector(".dice1");
 const dice2 = document.querySelector(".dice2");
@@ -9,6 +11,8 @@ const holdScore = document.querySelector(".holdScore");
 
 score1.textContent = 0;
 score2.textContent = 0;
+currentScoreP1.textContent = 0;
+currentScoreP2.textContent = 0;
 // diceContainer.classList.add("hide");
 
 // Roll Function
@@ -21,9 +25,15 @@ randomDice.addEventListener("click", function () {
   const diceRoll1 = Math.trunc(Math.random() * 6) + 1;
   const diceRoll2 = Math.trunc(Math.random() * 6) + 1;
   // 2. Display dice
-  // diceEl.classList.remove("hidden");
   dice1.src = `img/dice-${diceRoll1}.png`;
   dice2.src = `img/dice-${diceRoll2}.png`;
+
+  if (diceRoll1 !== 1 || diceRoll2 !== 1) {
+    currentScore = diceRoll1 + diceRoll2;
+    // console.log(currentScore);
+    currentScoreP1.textContent = currentScore;
+  } else {
+  }
 });
 
 //   diceContainer.classList.remove("hide");
