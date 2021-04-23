@@ -38,6 +38,10 @@ main {
   position: relative;
   font-size: 64px;
 }
+.active {
+  background-color: #eeeeee;
+  opacity: 0.9;
+}
 
 .score {
   font-size: 128px;
