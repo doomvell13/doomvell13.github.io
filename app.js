@@ -14,7 +14,9 @@ score2.textContent = 0;
 currentScoreP1.textContent = 0;
 currentScoreP2.textContent = 0;
 // diceContainer.classList.add("hide");
-
+const score = (0, 0);
+let currentScore = 0;
+let currentPlayer = 0; // <- Set current player to 0
 // Roll Function
 // Generate random dice roll
 // Display the number
@@ -22,17 +24,27 @@ currentScoreP2.textContent = 0;
 
 randomDice.addEventListener("click", function () {
   // 1. Generating a random dice roll
-  const diceRoll1 = Math.trunc(Math.random() * 6) + 1;
-  const diceRoll2 = Math.trunc(Math.random() * 6) + 1;
+  const diceRoll1 = Math.floor(Math.random() * 6) + 1;
+  const diceRoll2 = Math.floor(Math.random() * 6) + 1;
   // 2. Display dice
   dice1.src = `img/dice-${diceRoll1}.png`;
   dice2.src = `img/dice-${diceRoll2}.png`;
 
-  if (diceRoll1 !== 1 || diceRoll2 !== 1) {
-    currentScore = diceRoll1 + diceRoll2;
+  if (diceRoll1 !== 1 && diceRoll2 !== 1) {
+    currentScore += diceRoll1 + diceRoll2;
     // console.log(currentScore);
-    currentScoreP1.textContent = currentScore;
+    document.getElementById(
+      `currentScore-${currentPlayer}`
+    ).textContent = currentScore;
+    console.log(currentPlayer);
   } else {
+    // reset score shown, switch player and reset current score to 0
+    document.getElementById(`currentScore-${currentPlayer}`).textContent = 0;
+    currentPlayer = currentPlayer === 0 ? 1 : 0;
+    currentScore = 0;
+
+    document.querySelector(".player1").classList.toggle("active");
+    document.querySelector(".player2").classList.toggle("active");
   }
 });
 
