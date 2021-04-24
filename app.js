@@ -1,6 +1,6 @@
 // Selectors
-const score1 = document.querySelector("#score1");
-const score2 = document.querySelector("#score2");
+const score1 = document.querySelector("#globalScore-0");
+const score2 = document.querySelector("#globalScore-1");
 const currentScoreP1 = document.getElementById("currentScore-0");
 const currentScoreP2 = document.getElementById("currentScore-1");
 const diceContainer = document.querySelector(".diceContainer");
@@ -14,13 +14,21 @@ score2.textContent = 0;
 currentScoreP1.textContent = 0;
 currentScoreP2.textContent = 0;
 // diceContainer.classList.add("hide");
-const score = (0, 0);
+const scores = [0, 0];
 let currentScore = 0;
 let currentPlayer = 0; // <- Set current player to 0
 // Roll Function
 // Generate random dice roll
 // Display the number
 // Check if any dice is roll to 1
+const switchPlayer = function () {
+  document.getElementById(`currentScore-${currentPlayer}`).textContent = 0;
+  currentPlayer = currentPlayer === 0 ? 1 : 0;
+  currentScore = 0;
+
+  document.querySelector(".player1").classList.toggle("active");
+  document.querySelector(".player2").classList.toggle("active");
+};
 
 randomDice.addEventListener("click", function () {
   // 1. Generating a random dice roll
@@ -36,18 +44,18 @@ randomDice.addEventListener("click", function () {
     document.getElementById(
       `currentScore-${currentPlayer}`
     ).textContent = currentScore;
-    console.log(currentPlayer);
   } else {
-    // reset score shown, switch player and reset current score to 0
-    document.getElementById(`currentScore-${currentPlayer}`).textContent = 0;
-    currentPlayer = currentPlayer === 0 ? 1 : 0;
-    currentScore = 0;
-
-    document.querySelector(".player1").classList.toggle("active");
-    document.querySelector(".player2").classList.toggle("active");
+    switchPlayer();
   }
 });
 
 //   diceContainer.classList.remove("hide");
 // dice1result.src = `dice-${dice1}.png`;
 // dice2result.src = `dice-${dice2}.png`;
+holdScore.addEventListener("click", function () {
+  scores[currentPlayer] += currentScore;
+
+  document.getElementById(`globalScore-${currentPlayer}`).textContent =
+    scores[currentPlayer];
+  switchPlayer();
+});
