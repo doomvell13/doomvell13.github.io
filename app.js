@@ -1,5 +1,7 @@
 // Selectors
-
+let scores, currentScore, currentPlayer, winningScore, playing;
+const player1 = document.querySelector(".player0");
+const player2 = document.querySelector(".player1");
 const score1 = document.querySelector("#globalScore-0");
 const score2 = document.querySelector("#globalScore-1");
 const currentScoreP1 = document.getElementById("currentScore-0");
@@ -9,13 +11,13 @@ const dice1 = document.querySelector(".dice1");
 const dice2 = document.querySelector(".dice2");
 const randomDice = document.querySelector(".rollDice");
 const holdScore = document.querySelector(".holdScore");
+const checkWinningScore = document.getElementById("new-game-form");
 const newGame = document.querySelector(".newGame");
+const setHighScore = document.querySelector("#get-winning-score");
 const winningScoreInput = document.querySelector(".winning-score-input");
 
-let scores, currentScore, currentPlayer, winningScore, playing;
-
-const init = function () {
-  winningScore = winningScoreInput.nodeValue;
+let init = () => {
+  winningScore = winningScoreInput.value;
   scores = [0, 0];
   currentScore = 0;
   currentPlayer = 0;
@@ -24,20 +26,22 @@ const init = function () {
   score2.textContent = 0;
   currentScoreP1.textContent = 0;
   currentScoreP2.textContent = 0;
+  player1.classList.remove("winner");
+  player2.classList.remove("winner");
+  player1.classList.add("active");
+  player2.classList.remove("active");
 };
 init();
 
-console.log(winningScore);
 // Switch player function
 const switchPlayer = function () {
   document.getElementById(`currentScore-${currentPlayer}`).textContent = 0;
-  currentPlayer = currentPlayer === 0 ? 1 : 0;
   currentScore = 0;
+  currentPlayer = currentPlayer === 0 ? 1 : 0;
 
   document.querySelector(".player0").classList.toggle("active");
   document.querySelector(".player1").classList.toggle("active");
 };
-console.log(winningScore);
 
 // Roll dice function
 randomDice.addEventListener("click", function () {
@@ -85,4 +89,11 @@ holdScore.addEventListener("click", function () {
   }
 });
 
+const handleSubmit = (event) => {
+  event.preventDefault();
+  init();
+};
+
 newGame.addEventListener("click", init);
+
+checkWinningScore.addEventListener("submit", handleSubmit);
