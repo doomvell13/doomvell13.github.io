@@ -21,6 +21,8 @@ let currentPlayer = 0; // <- Set current player to 0
 // Generate random dice roll
 // Display the number
 // Check if any dice is roll to 1
+
+// Switch player function
 const switchPlayer = function () {
   document.getElementById(`currentScore-${currentPlayer}`).textContent = 0;
   currentPlayer = currentPlayer === 0 ? 1 : 0;
@@ -30,6 +32,7 @@ const switchPlayer = function () {
   document.querySelector(".player2").classList.toggle("active");
 };
 
+// Roll dice function
 randomDice.addEventListener("click", function () {
   // 1. Generating a random dice roll
   const diceRoll1 = Math.floor(Math.random() * 6) + 1;
@@ -48,14 +51,24 @@ randomDice.addEventListener("click", function () {
     switchPlayer();
   }
 });
-
 //   diceContainer.classList.remove("hide");
 // dice1result.src = `dice-${dice1}.png`;
 // dice2result.src = `dice-${dice2}.png`;
+
+// Hold score function
+
 holdScore.addEventListener("click", function () {
   scores[currentPlayer] += currentScore;
 
   document.getElementById(`globalScore-${currentPlayer}`).textContent =
     scores[currentPlayer];
-  switchPlayer();
+
+  if (scores[currentPlayer] >= 20) {
+    document.querySelector(`.player${currentPlayer}`).classList.add("winner");
+    document
+      .querySelector(`.player${currentPlayer}`)
+      .classList.remove("active");
+  } else {
+    switchPlayer();
+  }
 });
