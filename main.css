@@ -103,3 +103,23 @@ main {
 .holdScore {
   top: 55rem;
 }
+.newGame {
+  top: 60rem;
+}
+
+.winningScore {
+  position: absolute;
+  width: 150px;
+  top: 65rem;
+  left: 50%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.winningScoreInput {
+  width: 100px;
+  height: 25px;
+  font-size: 1.8rem;
+  margin: 5px;
+  margin-bottom: 20px;
+}
