@@ -95,5 +95,4 @@ const handleSubmit = (event) => {
 };
 
 newGame.addEventListener("click", init);
-
 checkWinningScore.addEventListener("submit", handleSubmit);
