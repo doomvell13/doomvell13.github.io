@@ -1,3 +1,8 @@
+/* Font-Family: 'Roboto', Sans-Serif;
+Font-Size: 35px;
+Font-Family: 'Droid Serif', Serif;
+Font-Size: 15px; */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,18 +14,18 @@ main {
 
 .grid-container {
   display: grid;
-  grid-column-gap: 20px;
-  grid-row-gap: 0px;
-  justify-content: space-evenly;
   height: 100vh;
   width: 100%;
+  grid-template-columns: 1fr 0.3fr 0.3fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "player0 diceContainer diceContainer player1" "player0 . . player1" "player0 . . player1" "player0 controls controls player1";
 }
 .diceContainer {
-  grid-area: 1 / 2 / 2 / 5;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 50px;
+  grid-area: diceContainer;
 }
 
 .dice {
@@ -29,23 +34,21 @@ main {
 }
 
 .player0 {
-  grid-area: 2 / 1 / 4 / 3;
-  display: inline-grid;
   justify-content: space-around;
   align-content: center;
+  grid-area: player0;
 }
 
 .player1 {
-  grid-area: 2 / 4 / 4 / 6;
-  display: inline-grid;
   justify-content: space-around;
   align-content: center;
+  grid-area: player1;
 }
 
 .Controls {
-  grid-area: 4 / 2 / 5 / 5;
   display: inline-grid;
   justify-content: space-around;
+  grid-area: controls;
 }
 .player {
   flex: 50%;
@@ -56,6 +59,8 @@ main {
 
 .name {
   position: relative;
+  text-transform: uppercase;
+  font-family: "Roboto", Sans-Serif;
   font-size: 4vw;
   letter-spacing: 1px;
   word-spacing: 2px;
@@ -89,6 +94,8 @@ main {
 .current {
   text-transform: uppercase;
   margin-bottom: 20px;
+  font-family: "Roboto", Sans-Serif;
+  font-weight: 700;
   font-size: 2vw;
   color: #ddd;
 }
@@ -101,24 +108,35 @@ main {
   color: #444;
   background: none;
   border: none;
+  text-transform: uppercase;
+  font-family: "Droid Serif", Serif;
   font-size: 2vw;
   cursor: pointer;
   font-weight: 400;
+  text-align: center;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.6);
   padding: 0.5rem 2rem;
 }
 
 .winning-score {
+  color: #444;
   display: inherit;
   text-align: center;
+  text-transform: uppercase;
+  font-family: "Droid Serif", Serif;
+  font-size: 2vw;
   margin-bottom: 15px;
+  padding-top: auto;
 }
 
 .winningScoreInput {
+  color: #444;
   width: 100px;
   height: 25px;
-  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-family: "Droid Serif", Serif;
+  font-size: 2vw;
   margin: 5px;
   margin-bottom: 20px;
 }
