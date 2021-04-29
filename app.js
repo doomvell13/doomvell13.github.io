@@ -43,6 +43,7 @@ const switchPlayer = function () {
   document.querySelector(".player0").classList.toggle("active");
   document.querySelector(".player1").classList.toggle("active");
 };
+diceContainer.classList.add("hidden");
 
 // Roll dice function
 randomDice.addEventListener("click", function () {
@@ -54,10 +55,24 @@ randomDice.addEventListener("click", function () {
       toggleClasses(die);
       die.dataset.roll = getRandomNumber(1, 6);
     });
+    diceContainer.classList.remove("hidden");
+    randomDice.classList.remove("reveal");
+    randomDice.classList.add("hidden");
+    holdScore.classList.remove("reveal");
+    holdScore.classList.add("hidden");
+    currentScoreP1.classList.remove("reveal");
+    currentScoreP1.classList.add("hidden");
+    currentScoreP2.classList.remove("reveal");
+    currentScoreP2.classList.add("hidden");
+    setTimeout(function () {
+      randomDice.classList.add("reveal");
+      holdScore.classList.add("reveal");
+      currentScoreP1.classList.add("reveal");
+      currentScoreP2.classList.add("reveal");
+    }, 1500);
 
     const diceRoll1 = Number(dice[0].dataset.roll);
     const diceRoll2 = Number(dice[1].dataset.roll);
-    // setTimeout(function(){ randomDice.removeEventListener("reveal"); }, 1500);
 
     if (diceRoll1 !== 1 && diceRoll2 !== 1) {
       currentScore += diceRoll1 + diceRoll2;
@@ -101,6 +116,7 @@ holdScore.addEventListener("click", function () {
       document
         .querySelector(`.player${currentPlayer}`)
         .classList.remove("active");
+      diceContainer.classList.add("hidden");
     } else {
       switchPlayer();
     }
