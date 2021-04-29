@@ -7,9 +7,10 @@ const score2 = document.querySelector("#globalScore-1");
 const currentScoreP1 = document.getElementById("currentScore-0");
 const currentScoreP2 = document.getElementById("currentScore-1");
 const diceContainer = document.querySelector(".diceContainer");
-const dice1 = document.querySelector(".dice1");
-const dice2 = document.querySelector(".dice2");
+// const dice1 = document.querySelector(".dice1");
+// const dice2 = document.querySelector(".dice2");
 const randomDice = document.querySelector(".rollDice");
+
 const holdScore = document.querySelector(".holdScore");
 const checkWinningScore = document.getElementById("new-game-form");
 const newGame = document.querySelector(".newGame");
@@ -47,15 +48,20 @@ const switchPlayer = function () {
 randomDice.addEventListener("click", function () {
   if (playing) {
     // 1. Generating a random dice roll
-    const diceRoll1 = Math.floor(Math.random() * 6) + 1;
-    const diceRoll2 = Math.floor(Math.random() * 6) + 1;
+    const dice = [...document.querySelectorAll(".die-list")];
     // 2. Display dice
-    dice1.src = `img/dice-${diceRoll1}.png`;
-    dice2.src = `img/dice-${diceRoll2}.png`;
+    dice.forEach((die) => {
+      toggleClasses(die);
+      die.dataset.roll = getRandomNumber(1, 6);
+    });
+
+    const diceRoll1 = Number(dice[0].dataset.roll);
+    const diceRoll2 = Number(dice[1].dataset.roll);
+    // setTimeout(function(){ randomDice.removeEventListener("reveal"); }, 1500);
 
     if (diceRoll1 !== 1 && diceRoll2 !== 1) {
       currentScore += diceRoll1 + diceRoll2;
-      // console.log(currentScore);
+
       document.getElementById(
         `currentScore-${currentPlayer}`
       ).textContent = currentScore;
@@ -64,6 +70,18 @@ randomDice.addEventListener("click", function () {
     }
   }
 });
+
+function toggleClasses(die) {
+  die.classList.toggle("odd-roll");
+  die.classList.toggle("even-roll");
+}
+
+function getRandomNumber(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 //   diceContainer.classList.remove("hide");
 // dice1result.src = `dice-${dice1}.png`;
 // dice2result.src = `dice-${dice2}.png`;
