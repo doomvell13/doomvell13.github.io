@@ -9,9 +9,10 @@ const currentScoreP2 = document.getElementById("currentScore-1");
 const diceContainer = document.querySelector(".diceContainer");
 // const dice1 = document.querySelector(".dice1");
 // const dice2 = document.querySelector(".dice2");
-const randomDice = document.querySelector(".rollDice");
 
+const randomDice = document.querySelector(".rollDice");
 const holdScore = document.querySelector(".holdScore");
+
 const checkWinningScore = document.getElementById("new-game-form");
 const newGame = document.querySelector(".newGame");
 const winningScoreInput2 = document.querySelector(".scores");
@@ -110,6 +111,8 @@ holdScore.addEventListener("click", function () {
         .querySelector(`.player${currentPlayer}`)
         .classList.remove("active");
       diceContainer.classList.add("hidden");
+      randomDice.classList.remove("reveal");
+      holdScore.classList.remove("reveal");
     } else {
       switchPlayer();
     }
@@ -122,6 +125,7 @@ const handleSubmit = (event) => {
 };
 
 newGame.addEventListener("click", init);
+
 winningScoreInput2.addEventListener("change", (e) => {
   winningScore = e.target.value;
   handleSubmit;
