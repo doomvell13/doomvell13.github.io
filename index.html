@@ -116,8 +116,16 @@
       
 
       <form id="new-game-form">
-        <label class="winning-score">Winning score <input class="winning-score-input" value="100" placeholder="100" />
-        </label>
+        <!-- <label class="winning-score">Winning score <input class="winning-score-input" value="100" placeholder="100" />
+        </label> -->
+        <label for="winning-score">Winning score</label>
+        <!-- onchange="myFunction()  -->
+  <select class="scores" name="scores">
+    <option value="20">20</option>
+    <option value="50">50</option>
+    <option value="100">100</option>
+    <option value="200">200</option>
+  </select>
         <button class="button newGame"><img src = "start-line.svg" style="width: 40px; height: auto;"/> New Game</button> 
       </form>
       <button class="button holdScore"><img src = "poker-machine.svg" style="width: 40px; height: auto;"/> Hold</button>
