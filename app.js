@@ -14,11 +14,10 @@ const randomDice = document.querySelector(".rollDice");
 const holdScore = document.querySelector(".holdScore");
 const checkWinningScore = document.getElementById("new-game-form");
 const newGame = document.querySelector(".newGame");
-const setHighScore = document.querySelector("#get-winning-score");
-const winningScoreInput = document.querySelector(".winning-score-input");
+const winningScoreInput2 = document.querySelector(".scores");
 
 let init = () => {
-  winningScore = winningScoreInput.value;
+  winningScore = winningScoreInput2;
   scores = [0, 0];
   currentScore = 0;
   currentPlayer = 0;
@@ -97,12 +96,6 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-//   diceContainer.classList.remove("hide");
-// dice1result.src = `dice-${dice1}.png`;
-// dice2result.src = `dice-${dice2}.png`;
-
-// Hold score function
-
 holdScore.addEventListener("click", function () {
   if (playing) {
     scores[currentPlayer] += currentScore;
@@ -129,4 +122,7 @@ const handleSubmit = (event) => {
 };
 
 newGame.addEventListener("click", init);
-checkWinningScore.addEventListener("submit", handleSubmit);
+winningScoreInput2.addEventListener("change", (e) => {
+  winningScore = e.target.value;
+  handleSubmit;
+});
