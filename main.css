@@ -316,9 +316,14 @@ Font-Size: 15px; */
 }
 
 #new-game-form {
+  color: #444;
   text-align: center;
   align-items: center;
   padding: 0.5rem 2rem;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: "Droid Serif", Serif;
+  font-size: 2vw;
 }
 
 .winning-score {
