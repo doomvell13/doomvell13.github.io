@@ -292,6 +292,18 @@ Font-Size: 15px; */
   padding: 0.5rem 2rem;
   border-radius: 50%;
 }
+.dropdown {
+  color: #444;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: "Droid Serif", Serif;
+  font-size: 2vw;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+  align-items: center;
+  border: none;
+}
 
 .hidden {
   opacity: 0;
