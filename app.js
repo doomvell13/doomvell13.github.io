@@ -17,6 +17,18 @@ const checkWinningScore = document.getElementById("new-game-form");
 const newGame = document.querySelector(".newGame");
 const winningScoreInput2 = document.querySelector(".scores");
 
+const diceRollSound = new Howl({
+  src: ["rolldice.mp3", "rolldice.wav"],
+});
+
+const winningSound = new Howl({
+  src: ["win.wav"],
+});
+
+const changePlayerSound = new Howl({
+  src: ["sad.mp3", "sad.wav"],
+});
+
 let init = () => {
   winningScore = winningScoreInput2;
   scores = [0, 0];
@@ -55,6 +67,7 @@ randomDice.addEventListener("click", function () {
       toggleClasses(die);
       die.dataset.roll = getRandomNumber(1, 6);
     });
+    diceRollSound.play();
     diceContainer.classList.remove("hidden");
     randomDice.classList.remove("reveal");
     randomDice.classList.add("hidden");
@@ -82,6 +95,7 @@ randomDice.addEventListener("click", function () {
       ).textContent = currentScore;
     } else {
       switchPlayer();
+      changePlayerSound.play();
     }
   }
 });
@@ -113,8 +127,10 @@ holdScore.addEventListener("click", function () {
       diceContainer.classList.add("hidden");
       randomDice.classList.remove("reveal");
       holdScore.classList.remove("reveal");
+      winningSound.play();
     } else {
       switchPlayer();
+      changePlayerSound.play();
     }
   }
 });

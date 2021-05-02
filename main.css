@@ -21,7 +21,7 @@ Font-Size: 15px; */
   display: grid;
   height: 100vh;
   width: 100%;
-  grid-template-columns: auto 0.4fr 0.4fr auto;
+  grid-template-columns: 1fr 0.4fr 0.4fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-template-areas: "player0 diceContainer diceContainer player1" "player0 . . player1" "player0 . . player1" "player0 controls controls player1";
@@ -291,6 +291,18 @@ Font-Size: 15px; */
   background-color: rgba(255, 255, 255, 0.6);
   padding: 0.5rem 2rem;
   border-radius: 50%;
+}
+.dropdown {
+  color: #444;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: "Droid Serif", Serif;
+  font-size: 2vw;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+  align-items: center;
+  border: none;
 }
 
 .hidden {
