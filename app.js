@@ -146,3 +146,4 @@ winningScoreInput2.addEventListener("change", (e) => {
   winningScore = e.target.value;
   handleSubmit;
 });
+introJs().start();
