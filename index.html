@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My PIG Dice Game</title>
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/3.4.0/introjs.min.css" integrity="sha512-631ugrjzlQYCOP9P8BOLEMFspr5ooQwY3rgt8SMUa+QqtVMbY/tniEUOcABHDGjK50VExB4CNc61g5oopGqCEw==" crossorigin="anonymous" />
   <link rel="stylesheet" href="main.css" />
   <!-- <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -14,7 +14,7 @@
     ></script> -->
     <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Roboto:300" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.1/howler.min.js" integrity="sha512-L6Z/YtIPQ7eU3BProP34WGU5yIRk7tNHk7vaC2dB1Vy1atz6wl9mCkTPPZ2Rn1qPr+vY2mZ9odZLdGYuaBk7dQ==" crossorigin="anonymous"></script>
-</head>
+  
 
 <body>
 
@@ -113,26 +113,21 @@
     </div>
 
     <div class="Controls">
-      
-      
-
+        
       <form id="new-game-form">
-        <!-- <label class="winning-score">Winning score <input class="winning-score-input" value="100" placeholder="100" />
-        </label> -->
-
-        <label for="winning-score">Winning score</label>
-        <!-- onchange="myFunction()  -->
-  <select class="scores dropdown" name="scores">
+        <label for="winning-score" data-title="How to play" data-intro="Step 1: Select the winning score to start playing">Winning score</label>       
+  <select class="scores dropdown" name="scores" >
     <option value="">Select</option>
     <option value="20">20</option>
     <option value="50">50</option>
     <option value="100">100</option>
     <option value="200">200</option>
-  </select>
+    </select>
         <button class="button newGame"><img src = "start-line.svg" style="width: 40px; height: auto;"/> New Game</button> 
       </form>
+
       <button class="button holdScore"><img src = "poker-machine.svg" style="width: 40px; height: auto;"/> Hold</button>
-      <button class="button rollDice"><img src = "slot-machine.svg" style="width: 40px; height: auto;"/> Roll</button>
+      <button class="button rollDice" data-intro="Step 2: Click Roll to start rolling the dice!"><img src = "slot-machine.svg" style="width: 40px; height: auto;"/> Roll</button>
     </div>
 
   </div>
@@ -175,8 +170,9 @@
         <p class="current-score" id="currentScore-1">1</p>
       </div> -->
 
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/3.4.0/intro.js" integrity="sha512-EgG+bjKjjGlnlm3F5cn0RFuMFHkptVfD9yHLMyv7LE5iEKsAP+RMuw9G6vi2s7v5q12BFupCyIO2yWD5/NMI2w==" crossorigin="anonymous"></script>
   <script src="app.js"></script>
+</head>
   </main>
 </body>
 
