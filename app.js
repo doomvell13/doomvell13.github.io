@@ -7,12 +7,8 @@ const score2 = document.querySelector("#globalScore-1");
 const currentScoreP1 = document.getElementById("currentScore-0");
 const currentScoreP2 = document.getElementById("currentScore-1");
 const diceContainer = document.querySelector(".diceContainer");
-// const dice1 = document.querySelector(".dice1");
-// const dice2 = document.querySelector(".dice2");
-
 const randomDice = document.querySelector(".rollDice");
 const holdScore = document.querySelector(".holdScore");
-
 const checkWinningScore = document.getElementById("new-game-form");
 const newGame = document.querySelector(".newGame");
 const winningScoreInput2 = document.querySelector(".scores");
@@ -20,11 +16,9 @@ const winningScoreInput2 = document.querySelector(".scores");
 const diceRollSound = new Howl({
   src: ["rolldice.mp3", "rolldice.wav"],
 });
-
 const winningSound = new Howl({
-  src: ["win.wav"],
+  src: ["winner.mp3"],
 });
-
 const changePlayerSound = new Howl({
   src: ["sad.mp3", "sad.wav"],
 });
@@ -101,8 +95,8 @@ randomDice.addEventListener("click", function () {
 });
 
 function toggleClasses(die) {
-  die.classList.toggle("odd-roll");
-  die.classList.toggle("even-roll");
+  die.classList.toggle("dice-one");
+  die.classList.toggle("dice-two");
 }
 
 function getRandomNumber(min, max) {
@@ -124,6 +118,7 @@ holdScore.addEventListener("click", function () {
       document
         .querySelector(`.player${currentPlayer}`)
         .classList.remove("active");
+
       diceContainer.classList.add("hidden");
       randomDice.classList.remove("reveal");
       holdScore.classList.remove("reveal");

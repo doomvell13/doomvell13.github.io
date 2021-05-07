@@ -68,10 +68,10 @@ Font-Size: 15px; */
   width: 8rem;
 }
 
-.even-roll {
+.dice-one {
   transition: transform 1.5s ease-out;
 }
-.odd-roll {
+.dice-two {
   transition: transform 1.25s ease-out;
 }
 .die-item {
@@ -102,40 +102,40 @@ Font-Size: 15px; */
   justify-self: center;
   width: 1.25rem;
 }
-.even-roll[data-roll="1"] {
+.dice-one[data-roll="1"] {
   transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg);
 }
-.even-roll[data-roll="2"] {
+.dice-one[data-roll="2"] {
   transform: rotateX(450deg) rotateY(720deg) rotateZ(360deg);
 }
-.even-roll[data-roll="3"] {
+.dice-one[data-roll="3"] {
   transform: rotateX(360deg) rotateY(630deg) rotateZ(360deg);
 }
-.even-roll[data-roll="4"] {
+.dice-one[data-roll="4"] {
   transform: rotateX(360deg) rotateY(810deg) rotateZ(360deg);
 }
-.even-roll[data-roll="5"] {
+.dice-one[data-roll="5"] {
   transform: rotateX(270deg) rotateY(720deg) rotateZ(360deg);
 }
-.even-roll[data-roll="6"] {
+.dice-one[data-roll="6"] {
   transform: rotateX(360deg) rotateY(900deg) rotateZ(360deg);
 }
-.odd-roll[data-roll="1"] {
+.dice-two[data-roll="1"] {
   transform: rotateX(-360deg) rotateY(-720deg) rotateZ(-360deg);
 }
-.odd-roll[data-roll="2"] {
+.dice-two[data-roll="2"] {
   transform: rotateX(-270deg) rotateY(-720deg) rotateZ(-360deg);
 }
-.odd-roll[data-roll="3"] {
+.dice-two[data-roll="3"] {
   transform: rotateX(-360deg) rotateY(-810deg) rotateZ(-360deg);
 }
-.odd-roll[data-roll="4"] {
+.dice-two[data-roll="4"] {
   transform: rotateX(-360deg) rotateY(-630deg) rotateZ(-360deg);
 }
-.odd-roll[data-roll="5"] {
+.dice-two[data-roll="5"] {
   transform: rotateX(-450deg) rotateY(-720deg) rotateZ(-360deg);
 }
-.odd-roll[data-roll="6"] {
+.dice-two[data-roll="6"] {
   transform: rotateX(-360deg) rotateY(-900deg) rotateZ(-360deg);
 }
 [data-side="1"] {
@@ -243,6 +243,9 @@ Font-Size: 15px; */
 }
 .winner {
   background-color: #2f2f2f;
+  background-image: url(/img/iwon.gif);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .score {
@@ -303,6 +306,7 @@ Font-Size: 15px; */
   text-align: center;
   align-items: center;
   border: none;
+  padding-bottom: 20px;
 }
 
 .hidden {

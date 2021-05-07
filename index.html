@@ -22,7 +22,7 @@
 
     <div class="diceContainer">
   
-        <ol class="die-list even-roll" data-roll="1" id="die-1">
+        <ol class="die-list dice-one" data-roll="1" id="die-1">
           <li class="die-item" data-side="1">
             <span class="dot"></span>
           </li>
@@ -57,7 +57,7 @@
             <span class="dot"></span>
           </li>
         </ol>
-        <ol class="die-list odd-roll" data-roll="1" id="die-2">
+        <ol class="die-list dice-two" data-roll="1" id="die-2">
           <li class="die-item" data-side="1">
             <span class="dot"></span>
           </li>
@@ -115,19 +115,19 @@
     <div class="Controls">
         
       <form id="new-game-form">
-        <label for="winning-score" data-title="How to play" data-intro="Step 1: Select the winning score to start playing">Winning score</label>       
-  <select class="scores dropdown" name="scores" >
-    <option value="">Select</option>
+        <label for="winning-score" >Winning score</label>       
+  <select class="scores dropdown" name="scores" data-title="How to play" data-intro="Step 1: Select the winning score to start playing">
+    <option value="" >Select</option>
     <option value="20">20</option>
     <option value="50">50</option>
     <option value="100">100</option>
     <option value="200">200</option>
     </select>
-        <button class="button newGame"><img src = "start-line.svg" style="width: 40px; height: auto;"/> New Game</button> 
+        <button class="button newGame"><img src = "start-line.svg" style="width: 30px; height: auto;"/> Reset Game</button> 
       </form>
 
-      <button class="button holdScore"><img src = "poker-machine.svg" style="width: 40px; height: auto;"/> Hold</button>
-      <button class="button rollDice" data-intro="Step 2: Click Roll to start rolling the dice!"><img src = "slot-machine.svg" style="width: 40px; height: auto;"/> Roll</button>
+      <button class="button holdScore"><img src = "poker-machine.svg" style="width: 30px; height: auto;"/> Hold</button>
+      <button class="button rollDice" data-intro="Step 2: Click Roll to start rolling the dice!"><img src = "slot-machine.svg" style="width: 30px; height: auto;"/> Roll</button>
     </div>
 
   </div>
