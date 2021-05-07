@@ -14,9 +14,10 @@ When a player reaches a total of 100 or more points, the game ends and that play
 
 
 Dice custom data attributes
-https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes
+https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes 
+<br>
 https://www.sitepoint.com/how-why-use-html5-custom-data-attributes/
-
+<br>
 
 
 explanations of the technologies used, the approach taken, a link to your live site, installation instructions, unsolved problems, etc.
