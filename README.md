@@ -13,7 +13,8 @@ A player can also choose to hold (stop rolling the die) if they do not want to t
 When a player reaches a total of 100 or more points, the game ends and that player is the winner.
 
 
-Dice custom data attributes
+Dice custom data attributes<br>
+
 https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes 
 <br>
 https://www.sitepoint.com/how-why-use-html5-custom-data-attributes/
